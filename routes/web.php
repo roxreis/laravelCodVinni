@@ -14,9 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+                        //parametro
+Route::get('/request/id/{id?}', 'HomeController@request');
+                        //parametro com interrogação fica opcional
 
 Route::get('/home','HomeController@viewHome');
 
 Route::get('/cidades','CidadeController@viewCidades');
+
+Route::get('/formulario', 'HomeController@exibirFormulario');
+Route::post('/formulario', 'HomeController@cadastrarFormulario');
 

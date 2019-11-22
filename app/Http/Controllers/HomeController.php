@@ -19,4 +19,23 @@ class HomeController extends Controller
 
         return view('home',["usuarios"=>$listaUsuarios]);
     }
+                    //funcao //classe //objeto 
+    public function request(Request $request, $id=0){
+        if($id==0){
+            echo "É necessario alguma informação";
+        }else{
+            dd($id);
+        }
+
+    }
+
+    public function exibirFormulario(){
+        return view('formulario');
+    }
+
+        //request super global que incorpora Get Post e File
+    public function cadastrarFormulario(Request $request){
+        dd($request->nome);
+
+    }
 }
